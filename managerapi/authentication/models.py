@@ -1,3 +1,4 @@
+#Implementing Custom User Model as email is used in place of Username.
 from django.db import models
 
 from django.contrib.auth.models import (
@@ -40,6 +41,7 @@ class UserManager(BaseUserManager):
         return user
 
 
+#Manager data is stored in this table
 class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField(max_length=255)
     email = models.EmailField(max_length=255, unique=True, db_index=True)
@@ -54,7 +56,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = 'email' #To use email and password for authentication
     REQUIRED_FIELDS = ['username']
 
     objects = UserManager()

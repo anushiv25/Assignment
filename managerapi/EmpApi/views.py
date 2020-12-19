@@ -4,7 +4,7 @@ from .models import Employee
 from .serializers import EmployeeSerializer
 from rest_framework import permissions
 
-# Create your views here.
+#Listing and Creating all the employees
 class EmployeeList(ListCreateAPIView):
 
     serializer_class = EmployeeSerializer
@@ -17,6 +17,7 @@ class EmployeeList(ListCreateAPIView):
         return Employee.objects.all()
 
 
+#Retrieving, Updating, Deleting the employee
 class EmployeeDetailView(RetrieveUpdateDestroyAPIView):
 
     serializer_class = EmployeeSerializer

@@ -32,11 +32,11 @@ class LoginView(GenericAPIView):
 
         if user:
             auth_token = jwt.encode(
-                {'email': user.email}, settings.JWT_SECRET_KEY)
-            serializer = UserSerializer(user)
+                {'email': user.email}, settings.JWT_SECRET_KEY) #Retreiving SECRET_KEY. When deploying globally add KEY using
+            serializer = UserSerializer(user)                   #Environment variable and then exporting through environment or by entering manually
             data = {'user': serializer.data, 'token': auth_token}
 
             return Response(data, status=status.HTTP_200_OK)
 
-            # SEND RES
+            # SEND RESPONSE
         return Response({'detail': 'Invalid credentials'}, status=status.HTTP_401_UNAUTHORIZED)

@@ -3,7 +3,7 @@ from rest_framework.serializers import ModelSerializer
 from .models import Employee
 
 class EmployeeSerializer(ModelSerializer):
-    password = serializers.CharField(max_length = 65,min_length = 8,write_only = True)
+    password = serializers.CharField(max_length = 65,min_length = 8,write_only = True) #Confidential
 
     class Meta:
         model = Employee

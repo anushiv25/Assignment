@@ -3,6 +3,7 @@ from django.conf import settings
 from authentication.models import User
 from django.core.validators import RegexValidator
 
+#Employee Table
 class Employee(models.Model):
     emp_id = models.CharField(max_length=15, unique=True)
     email = models.EmailField(max_length=255, unique=True)
@@ -16,7 +17,7 @@ class Employee(models.Model):
     city = models.CharField(max_length=100)
 
     class Meta:
-        ordering = ['firstname', 'lastname']
+        ordering = ['firstname', 'lastname'] #To retreive data first by firstname then by lastname
 
     def __str__(self):
         return emp_id

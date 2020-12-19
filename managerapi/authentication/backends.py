@@ -1,3 +1,4 @@
+#Implementing JWT Authentication for the API's
 import jwt
 from rest_framework import authentication, exceptions
 from django.conf import settings
