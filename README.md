@@ -6,6 +6,7 @@ SwaggerAPI implemented for Manager and Employee management system.
 2) Install Django version 2.2.16 => pip install Django==2.2.16
 3) Install Django Rest Framework using => pip install djangorestframework
 4) Install Swagger API for Django => pip install drf-yasg
+5) Install JWT for Django => pip install pyjwt
 
 # Running:
 => In settings.py remove the current JWT Secret Key and add it manually when deploying it globally. For testing purpose let it be as it is.
